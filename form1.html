@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Form</title>
+        <style>
+            body {
+                background-image: linear-gradient(to left,blue,orange);
+            }
+            form{
+                color: white;
+                margin-top: 15vh;
+            }
+            input{
+                
+            }
+            #login {
+                margin-left:45vw;
+                margin-top: 1vh;
+            }
+            .a,.b {
+                margin-bottom: 2vh;
+            }
+            .a {
+                text-align: right;
+            }
+            @media (max-width:800px){
+                .form-inline input{
+                    margin:10px 0;
+
+                }
+
+            
+                .form-inline{
+                    display: flex;
+                    flex-flow: column;
+                    align-items: stretch;
+                }
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+        <form>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 a">Name:</div>
+                <div class="col-6 b"><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col-6 a">Email:</div>
+                <div class="col-6 b"><input type="email" id="email" placedholder="Enter email"></div>
+            </div>
+            <div class="row">
+                <div class="col-6 a">Username:</div>
+                <div class="col-6 b"><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col-6 a">Password:</div>
+                <div class="col-6 b"><input type="password" id="password" placeholder="Enter password"></div>
+            </div>
+            <div class="row">
+                <div class="col-6 a">Company:</div>
+                <div class="col-6 b"><input type="text"></div>
+            </div>
+            <div class="row">
+                <div class="col-6 a">Select Country:</div>
+                <div class="col-6 b"><select name="country" id="country">
+                    <option value="United States of America">United States of America</option>
+                    <option value="India">India</option>
+                </select></div>
+            </div>
+            <div class="row">
+                <div class="col-6 a">Select timezone:</div>
+                <div class="col-6 b"><select name="timezone" id="timezone">
+                    <option value="(GMT-6:00)Central America">(GMT-6:00)Central America</option>
+                </select></div>
+            </div>
+            
+        </div>
+       
+        <input type="submit" id="login"
+        onclick="return validate()">
+        
+        </form>
+        <div id="message" style="color:red;"></div>
+        <script>
+            function validate(){
+            var emailText=document.getElementById('email');
+            console.log(emailText);
+            
+            var passText=document.getElementById('pswd');
+            console.log(passText);
+            
+            var messageContainer=document.getElementById('message'); 
+            console.log(messageContainer);
+            
+            var email=emailText.innerText;
+            var password=passtext.innerText;
+            if(email==''){
+                messageContainer.innerHTML='Email cannot be blank';
+                return false;
+            }
+            if(password==''){
+                messageContainer.innerHTML='Password cannot be empty';
+                return false;
+            }
+            if(email=='a@a.com' && password=='abc@123')
+                return true;
+            else{
+                messageContainer.innerHTML='Invalid email or password';
+                return false;
+            }
+        }
+    </script>    
+
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>

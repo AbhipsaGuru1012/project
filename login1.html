@@ -1,0 +1,64 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
+    
+
+    <title>Login form</title>
+    <style>
+        html{
+            font-family: 'Odibee Sans', cursive;
+            background: #348F50;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #56B4D3, #348F50);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #56B4D3, #348F50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+     }
+     form{
+         border:1px solid black;
+         padding:15vh;
+     }
+     input{
+         margin-top:5vh;
+     }
+     #login:hover{
+         color:white;
+         background:black;
+         transform:scale(1,2);
+     }
+    </style>
+</head>
+<body>
+    <h1>login form</h1>
+    <form action="" method="">
+        Email:<input type="email" id="email">
+        <br>
+        <br>
+        Password:<input type="password">
+        <input type="submit" value="login" id="login"
+        onclick="return validate()">
+    </form>
+    <div id="message" style="color:red"></div>
+    <script>
+        function validate(){
+            var emailText=document.getElementById('email');
+            var passText=document.getElementById('pswd');
+            var messageContainer=getElementById('message');
+            var email=emailText.value;
+            var password=passText.value;
+            if(email==''){
+                messageContainer.innerHTML='Email cannot be blank';
+                return false;
+            }
+            if(password=''){
+                messageContainer.innerHTML='Password cannot be blank';
+                return false; 
+            }
+            if(email=='a@a.com' && password='abc@123'){
+                return true
+            }
+            else{
+                messageContainer.innerHTML='Invalid email or password';
+            }
+
+
+        }
+    </script>
+</body>
